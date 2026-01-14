@@ -70,6 +70,7 @@ export const verifyOTP = async (req: Request, res: Response) => {
     }
 
     const otpRecord = await OtpModel.findOne({ email });
+    
     if (!otpRecord || otpRecord.otp !== otp) {
       return res.status(400).json({ success: false, message: 'Invalid or expired OTP' });
     }
@@ -106,17 +107,21 @@ export const verifyOTP = async (req: Request, res: Response) => {
 
     await OtpModel.deleteOne({ email });
 
-    res.json({
+    const response = {
       success: true,
       message: user.isNew ? 'Signup successful' : 'Login successful',
+      token: token,
       user: {
         _id: user._id,
         name: user.name,
         email: user.email,
         avatar: user.avatar
       }
-    });
+    };
+    
+    res.json(response);
   } catch (error) {
+    console.error(' Error in verifyOTP:', error);
     res.status(500).json({ success: false, message: (error as Error).message });
   }
 };

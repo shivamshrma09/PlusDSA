@@ -6,6 +6,7 @@ import { Button } from "@heroui/react";
 import { loginUser, verifyLoginOtp, handleGoogleLogin } from './services/authService';
 import { useRouter } from 'next/navigation';
 import Socialbutton from '../components/Socialbutton';
+import { authUtils } from '@/lib/auth';
 
 function LoginPage() {
   const [formData, setFormData] = useState({
@@ -23,7 +24,10 @@ function LoginPage() {
     
     if (token && userStr) {
       try {
-        router.push('/home/striver-a2z-dsa-course');
+        authUtils.setToken(token);
+        setTimeout(() => {
+          window.location.href = '/home/striver-a2z-dsa-course';
+        }, 100);
       } catch (error) {
         console.error('Error processing Google auth:', error);
       }
@@ -50,8 +54,13 @@ function LoginPage() {
       } else {
         const result = await verifyLoginOtp(formData.email, formData.otp);
         if (result.success) {
-          toast.success('Login successful!');
-          router.push('/home/striver-a2z-dsa-course');
+          if (result.token) {
+            authUtils.setToken(result.token);
+            toast.success('Login successful!');
+            setTimeout(() => {
+              window.location.href = '/home/striver-a2z-dsa-course';
+            }, 100);
+          }
         } else {
           toast.error(result.message || 'Invalid OTP');
         }
@@ -133,7 +142,7 @@ function LoginPage() {
           <div className="text-center mt-6">
             <p className="text-gray-400 text-sm">
               Don't have an account?{" "}
-              <a href="/singup" className="text-[#0340aa] hover:underline font-medium">
+              <a href="/auth/singup" className="text-[#0340aa] hover:underline font-medium">
                 Sign up here
               </a>
             </p>

@@ -34,7 +34,7 @@ function page() {
     { icon: IoBookSharp, number: "5+", label: "Famous Sheets" },
     { icon: FaTrophy, number: "20+", label: "Contests Won" },
   ];
-  
+
   const feedbacks = [
     {
       name: "Shivam Kumar",
@@ -119,35 +119,34 @@ function page() {
     
     return () => clearInterval(statInterval);
   }, []);
+
+
+
   return (
-    <div className='min-h-screen bg-black  '>
-<div className='max-w-7xl mx-auto'>
-
-
-      
+    <div className='min-h-screen min-w-screen  bg-black  '>
+<div className=''>
       <motion.div
         initial={{opacity:0 , scale:0.7}}
       animate={{opacity:1 , scale:0.9}}
       transition={{duration:3}}
-
-       className='flex max-w-4xl mx-auto rounded-full items-center justify-center py-1 px-2 shadow-lg' style={{background: 'linear-gradient(135deg, #0340aa, #4f46e5, #0b2a60)', boxShadow: '0 4px 15px rgba(3, 64, 170, 0.4)'}}>
+       className='flex lg:max-w-4xl  mx-auto rounded-full items-center justify-center py-1 px-2 shadow-lg' style={{background: 'linear-gradient(135deg, #0340aa, #4f46e5, #0b2a60)', boxShadow: '0 4px 15px rgba(3, 64, 170, 0.4)'}}>
         Get    <b className='p-1 border-white bg-black text-white rounded-full px-2 mx-1'>55% OFF</b>   on year end sale and crack interviews
 
       </motion.div>
       <motion.div 
-      className='max-w-7xl   mx-auto mt-2 px-5 py-2 border border-neutral-500/30 rounded-full flex justify-between items-center' style={{marginBottom: 90}}  
+      className='lg:max-w-7xl mx-auto mt-2 px-2 md:px-5 py-2 border border-neutral-500/30 rounded-full flex justify-between items-center' style={{marginBottom: 90}}  
       >
-        <div>
+        <div className='flex-shrink-0'>
         <Image
           src="https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Screenshot%202026-01-02%20202958.png"
           alt="Logo"
           width={150}
           height={40}
-          className="h-10 rounded-lg cursor-pointer"
+          className="h-8 md:h-10 w-auto rounded-lg cursor-pointer"
         /> 
         </div>
 
-        <div className='flex gap-2'>
+        <div className='hidden md:flex gap-2'>
        <button 
          className='text-white text-md hover:text-blue-400 cursor-pointer transition-colors' 
          onClick={() => document.getElementById('problems')?.scrollIntoView({ behavior: 'smooth' })}
@@ -175,16 +174,16 @@ function page() {
 
         </div>
 
-          <div className='flex gap-3'>
+          <div className='flex gap-2 md:gap-3 flex-shrink-0'>
        <button 
-         className='text-md text-[#0340aa] cursor-pointer font-semibold'
+         className='text-xs md:text-md text-[#0340aa] cursor-pointer font-semibold'
          onClick={() => window.location.href = '/auth/login'}
        >
          Login
        </button>
        <motion.button 
          whileHover={{scale: 1.05}}
-         className='text-white text-md bg-[#0340aa] px-4 py-2 flex gap-2 items-center border-[#042660] rounded-full cursor-pointer font-semibold'
+         className='text-white text-xs md:text-md bg-[#0340aa] px-3 md:px-4 py-1.5 md:py-2 flex gap-1 md:gap-2 items-center border-[#042660] rounded-full cursor-pointer font-semibold'
          onClick={() => window.location.href = '/auth/singup'}
        >
          Register 
@@ -192,7 +191,7 @@ function page() {
            animate={{x: [0, 5, 0]}}
            transition={{repeat: Infinity, duration: 1.5}}
          >
-           <IoMdArrowForward/>
+           <IoMdArrowForward className='text-xs md:text-base'/>
          </motion.div>
        </motion.button>
 
@@ -204,15 +203,15 @@ function page() {
 
 
       <div
-      className='flex flex-col mx-auto gap-1  mt-90 '
+      className='flex flex-col mx-auto gap-1  mt-10 '
       >
-        <div className='text-center px-4  max-w-7xl  mx-auto'>
+        <div className='text-center px-4  lg:max-w-7xl  mx-auto'>
           <motion.h1 
-            className='text-4xl   font-bold text-white '
+            className='text-2xl md:text-4xl lg:text-5xl font-bold text-white'
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             transition={{duration: 0.8}}
-style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
+            style={{marginBottom:'60px' , marginTop:'20px' }}
           >
             Master Data Structure And Algorithm (DSA) <span className='text-[#0340aa]'>10</span>x
             <br />
@@ -251,7 +250,7 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
 
 
 <motion.div 
-  className='p-8 mt-20 justify-center mx-auto flex flex-col items-center gap-4 max-w-sm relative'
+  className='p-4 md:p-8 mt-20 justify-center mx-auto flex flex-col items-center gap-4 w-[200px] h-[200px] md:w-[280px] md:h-[280px] max-w-sm relative'
   animate={{
     borderColor: ['#525252', '#0340aa', '#525252'],
     boxShadow: ['0 0 0px rgba(3, 64, 170, 0)', '0 0 30px rgba(3, 64, 170, 0.4)', '0 0 0px rgba(3, 64, 170, 0)']
@@ -264,8 +263,6 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
   style={{
     border: '2px solid #525252',
     borderRadius: '50%',
-    width: '280px',
-    height: '280px',
     background: 'radial-gradient(circle, rgba(3,64,170,0.1) 0%, rgba(0,0,0,0.8) 70%)',
     boxShadow: '0 10px 40px rgba(0,0,0,0.5), inset 0 0 50px rgba(3,64,170,0.1)'
   }}
@@ -289,13 +286,13 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
     transition={{ duration: 0.9}}
     className='text-center relative z-10'
   >
-    <div className='text-[#0340aa] text-4xl mb-4 flex justify-center drop-shadow-lg'>
+    <div className='text-[#0340aa] text-2xl md:text-4xl mb-2 md:mb-4 flex justify-center drop-shadow-lg'>
       {React.createElement(stats[currentStat].icon)}
     </div>
-    <h3 className='text-4xl font-bold text-white mb-3 drop-shadow-lg'>
+    <h3 className='text-2xl md:text-4xl font-bold text-white mb-2 md:mb-3 drop-shadow-lg'>
       {stats[currentStat].number}
     </h3>
-    <p className='text-neutral-300 text-base font-medium'>
+    <p className='text-neutral-300 text-sm md:text-base font-medium'>
       {stats[currentStat].label}
     </p>
   </motion.div>
@@ -322,64 +319,64 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
     animate={{ opacity: 1, scale: 1 }}
     className='mx-auto text-center relative'
   >
-    <h1 className='text-2xl mt-6 text-[#0340aa] font-bold '>How We Help</h1>
+    <h1 className='text-xl md:text-2xl mt-6 text-[#0340aa] font-bold'>How We Help</h1>
     
      <motion.div 
         initial={{ width: 0 , height:0}}
-        animate={{ width: 1 , height:50}}
+        animate={{ width: 2 , height:50}}
         transition={{ delay: 1.3, duration: 1 }}
         className='h-px bg-white mx-auto '
       />
 
     <motion.div 
-      initial={{ height: 0 }}
-      animate={{ height: 1 }}
+      initial={{ height: 0 , width: 0 }}
+      animate={{ height: 2 , width: "150%"}}
       transition={{ delay: 0.5, duration: 0.8 }}
       className='w-px bg-white mx-auto max-w-6xl '
     />
     
     <div className='relative'>
-      <div className='flex flex-row'>
+      <div className='flex flex-row '>
       <motion.div 
         initial={{ width: 0 , height:0}}
-        animate={{ width: 1 , height:50}}
+        animate={{ width: 2 , height:50}}
         transition={{ delay: 1.3, duration: 1 }}
         className='h-px bg-white mx-auto '
       />
 
        <motion.div 
         initial={{ width: 0 , height:0}}
-        animate={{ width: 1 , height:50}}
+        animate={{ width: 2 , height:50}}
         transition={{ delay: 1.3, duration: 1 }}
         className='h-px bg-white mx-auto '
       />
 
        <motion.div 
         initial={{ width: 0 , height:0}}
-        animate={{ width: 1 , height:50}}
+        animate={{ width: 2 , height:50}}
         transition={{ delay: 1.3, duration: 1 }}
         className='h-px bg-white mx-auto '
       />
 
        <motion.div 
         initial={{ width: 0 , height:0}}
-        animate={{ width: 1 , height:50}}
+        animate={{ width: 2 , height:50}}
         transition={{ delay: 1.3, duration: 1 }}
         className='h-px bg-white mx-auto '
       /> <motion.div 
         initial={{ width: 0 , height:0}}
-        animate={{ width: 1 , height:50}}
+        animate={{ width: 2 , height:50}}
         transition={{ delay: 1.3, duration: 1 }}
         className='h-px bg-white mx-auto '
       /> <motion.div 
         initial={{ width: 0 , height:0}}
-        animate={{ width: 1 , height:50}}
+        animate={{ width: 2 , height:50}}
         transition={{ delay: 1.3, duration: 1 }}
         className='h-px bg-white mx-auto '
       />
       
       </div>
-      <div className='flex justify-between items-start max-w-5xl mx-auto relative'>
+      <div className='flex justify-between items-start max-w-6xl mx-auto relative'>
         {[
           { 
             title: "Test", 
@@ -420,15 +417,15 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
               className='w-px bg-white mx-auto mb-2'
             />
             
-            <div className='bg-black rounded-lg p-3 min-w-[120px]'>
-              <h3 className='text-white text-xl font-bold mb-4'>{branch.title}</h3>
+            <div className='bg-black rounded-lg p-3 max-w-6xl'>
+              <h3 className='text-white text-base md:text-lg lg:text-xl font-bold mb-4'>{branch.title}</h3>
               {branch.items.map((item, itemIndex) => (
                 <motion.p 
                   key={itemIndex}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 2.2 + index * 0.2 + itemIndex * 0.1 }}
-                  className='text-neutral-400 text-base mb-2'
+                  className='text-neutral-400 text-xs md:text-sm lg:text-base mb-2'
                 >
                   {item}
                 </motion.p>
@@ -447,147 +444,147 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
   </motion.div>
 )}
 
-<div className='max-w-7xl flex flex-col mt-20' id='features'>
+<div className='lg:max-w-7xl mx-auto flex flex-col mt-20' id='features'>
   <div className='flex flex-row justify-between mb-10 py-10 px-10 '>
-    <h1 className='text-3xl md:text-4xl font-bold text-white mb-4 leading-tight'>
+    <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight'>
       <span className='text-[#0340aa]'>Everything You Need To Crack</span>
       <br/>
       Tech Interviews
     </h1>
-    <p className='text-gray-400 text-lg leading-relaxed w-80'>
+    <p className='text-sm md:text-base lg:text-lg text-gray-400 leading-relaxed max-w-xs md:max-w-md lg:w-80'>
       A single platform that combines structured learning, real practice, and expert guidance so you can master coding, system design, and core CS subjects with confidence.
     </p>
   </div>
 
-  <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 px-10' id='problems'>
+  <div className='grid grid-cols-1 md:grid-cols-2  ' id='problems'>
     
-    <div className='space-y-8'>
+    <div className=''>
       
       <motion.div 
-        className='border-t border-b border-r border-neutral-500/20 p-8 bg-gradient-to-br from-gray-900/50 to-black/50'
+        className='border border-neutral-500/20  p-6 bg-gradient-to-br from-gray-900/30 to-black/50  transition-all duration-300'
         initial={{opacity: 0, y: 20}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.3}}
       >
-        <h3 className='text-2xl font-semibold text-white mb-4'>Structured DSA Sheets</h3>
-        <p className='text-gray-400 mb-6 leading-relaxed text-lg'>
+        <h3 className='text-xl md:text-2xl font-semibold text-white'>Structured DSA Sheets</h3>
+        <p className='text-sm md:text-base lg:text-lg text-gray-400 mb-6 leading-relaxed'>
           Curated problem sets from Striver A2Z, Love Babbar, and Blind 75 with optimal solving order.
         </p>
-        <div className='w-full h-24 bg-gray-800 rounded-lg flex items-center justify-center'>
+        <div className='w-full h-64 rounded-lg overflow-hidden'>
           <Image
             src="https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Screenshot%202026-01-12%20003102.png"
-            alt="DSA Sheets Icon"
-            width={300}
-            height={96}
-            className="w-full h-full object-contain rounded-lg"
+            alt="DSA Sheets"
+            width={500}
+            height={192}
+            className="w-full h-full object-cover  hover:scale-102 transition-transform duration-300"
           />
         </div>
       </motion.div>
 
       <motion.div 
-        className='border-t border-b border-r border-neutral-500/20 p-8 bg-gradient-to-br from-gray-900/50 to-black/50'
+        className='border border-neutral-500/20  p-6  transition-all duration-300'
         initial={{opacity: 0, y: 20}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.3}}
       >
-        <h3 className='text-2xl font-semibold text-white mb-4'>Contest</h3>
-        <p className='text-gray-400 mb-6 leading-relaxed text-lg'>
+        <h3 className='text-xl md:text-2xl font-semibold text-white'>Contest</h3>
+        <p className='text-sm md:text-base lg:text-lg text-gray-400 mb-6 leading-relaxed'>
           Compete with learning partners and experience real-time interview competition environment with live contests, rankings, and peer challenges.
         </p>
-        <div className='w-full h-24 bg-gray-800 rounded-lg flex items-center justify-center'>
+        <div className='w-full h-48  overflow-hidden'>
           <Image
             src="https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Screenshot%202026-01-12%20004920.png"
-            alt="Timer Icon"
-            width={300}
-            height={96}
-            className="w-full h-full object-contain rounded-lg"
+            alt="Contest Platform"
+            width={500}
+            height={192}
+            className="w-full h-full object-cover  hover:scale-102 transition-transform duration-300"
           />
         </div>
       </motion.div>
 
       <motion.div 
-        className='border-t border-b mb-4 border-r border-neutral-500/20 p-8 bg-gradient-to-br from-gray-900/50 to-black/50'
+        className='border border-neutral-500/20 p-6 bg-black  transition-all duration-300'
         initial={{opacity: 0, y: 20}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.3}}
       >
-        <h3 className='text-2xl font-semibold text-white mb-4'>Community</h3>
-        <p className='text-gray-400 mb-6 leading-relaxed text-lg'>
+        <h3 className='text-xl md:text-2xl font-semibold text-white'>Community</h3>
+        <p className='text-sm md:text-base lg:text-lg text-gray-400 mb-6 leading-relaxed'>
           Join a vibrant community of learners, connect with study partners, participate in group discussions, and get support from peers on your coding journey.
         </p>
-        <div className='w-full h-24 bg-gray-800 rounded-lg flex items-center justify-center'>
+        <div className='w-full h-48  overflow-hidden'>
           <Image
             src="https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Screenshot%202026-01-03%20191343.png"
-            alt="Analytics Icon"
-            width={300}
-            height={96}
-            className="w-full h-full object-contain rounded-lg"
+            alt="Community Platform"
+            width={500}
+            height={192}
+            className="w-full h-full object-cover hover:scale-102 transition-transform duration-300"
           />
         </div>
       </motion.div>
     </div>
     
-    <div className='space-y-8'>
+    <div className=''>
       
       <motion.div 
-        className='border-t border-b border-neutral-500/20 p-8 bg-gradient-to-br from-gray-900/50 to-black/50'
+        className='border border-neutral-500/20  p-6 bg-black  transition-all duration-300'
         initial={{opacity: 0, y: 20}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.3}}
       >
-        <h3 className='text-2xl font-semibold text-white mb-4'>New way to Solve Question</h3>
-        <p className='text-gray-400 mb-6 leading-relaxed text-lg'>
+        <h3 className='text-xl md:text-2xl font-semibold text-white'>New way to Solve Question</h3>
+        <p className='text-sm md:text-base lg:text-lg text-gray-400 mb-6 leading-relaxed'>
           Transform your DSA journey from isolated problem-solving to a complete learning experience. Create custom playlists, practice with time-bound sessions, track progress, compete with peers, earn points, take tests, discuss solutions, and master time management all in one platform.
         </p>
-        <div className='w-full h-24 bg-gray-800 rounded-lg flex items-center justify-center'>
+        <div className='w-full h-48  overflow-hidden'>
           <Image
             src="https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Screenshot%202026-01-12%20002423.png"
-            alt="System Design Icon"
-            width={300}
-            height={96}
-            className="w-full h-full object-contain rounded-lg"
+            alt="Problem Solving Interface"
+            width={500}
+            height={192}
+            className="w-full h-full object-cover hover:scale-102 transition-transform duration-300"
           />
         </div>
       </motion.div>
 
       <motion.div 
-        className='border-t border-b border-neutral-500/20 p-8 bg-gradient-to-br from-gray-900/50 to-black/50'
+        className='border border-neutral-500/20 p-6  transition-all duration-300'
         initial={{opacity: 0, y: 20}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.3}}
       >
-        <h3 className='text-2xl font-semibold text-white mb-4'>Progress Tracker</h3>
-        <p className='text-gray-400 mb-6 leading-relaxed text-lg'>
+        <h3 className='text-xl md:text-2xl font-semibold text-white'>Progress Tracker</h3>
+        <p className='text-sm md:text-base lg:text-lg text-gray-400 mb-6'>
           Our intelligent algorithm analyzes your problem-solving patterns, notes, bookmarks, and test scores to identify weak areas. Using spaced repetition principles, it recommends daily practice questions to break the forgetting curve and optimize your learning retention.
         </p>
-        <div className='w-full h-24 bg-gray-800 rounded-lg flex items-center justify-center'>
+        <div className='w-full h-48  overflow-hidden'>
           <Image
             src="https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Screenshot%202026-01-12%20003238.png"
-            alt="CS Fundamentals Icon"
-            width={300}
-            height={96}
-            className="w-full h-full object-contain rounded-lg"
+            alt="Progress Analytics"
+            width={500}
+            height={192}
+            className="w-full h-full   hover:scale-102 transition-transform duration-300"
           />
         </div>
       </motion.div>
 
       <motion.div 
-        className='border-t border-b border-neutral-500/20 p-8 bg-gradient-to-br from-gray-900/50 to-black/50'
+        className='border border-neutral-500/20  p-6  transition-all duration-300'
         initial={{opacity: 0, y: 20}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.3}}
       >
-        <h3 className='text-2xl font-semibold text-white mb-4'>Find Learning Partner</h3>
-        <p className='text-gray-400 mb-6 leading-relaxed text-lg'>
-          Connect with like-minded learners, find study buddies with similar goals, and collaborate on coding challenges together for accelerated growth.And Find with AI 
+        <h3 className='text-xl md:text-2xl font-semibold text-white mb-4'>Find Learning Partner</h3>
+        <p className='text-sm md:text-base lg:text-lg text-gray-400 mb-6 leading-relaxed'>
+          Connect with like-minded learners, find study buddies with similar goals, and collaborate on coding challenges together for accelerated growth. Find with AI assistance.
         </p>
-        <div className='w-full h-24 bg-gray-800 rounded-lg flex items-center justify-center'>
+        <div className='w-full h-48  overflow-hidden'>
           <Image
             src="https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Screenshot%202026-01-03%20191403.png"
-            alt="Mentorship Icon"
-            width={300}
-            height={96}
-            className="w-full h-full object-contain rounded-lg"
+            alt="Learning Partners"
+            width={500}
+            height={192}
+            className="w-full h-full object-cover  hover:scale-102 transition-transform duration-300"
           />
         </div>
       </motion.div>
@@ -600,66 +597,66 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
   
   <div className='py-16 mt-10 px-10'>
     <div className='text-center mb-12'>
-      <h2 className='text-3xl font-bold text-white mb-5'>Trusted by <span className='text-[#0340aa]'>professionals at</span> top companies</h2>
-      <div className='flex flex-wrap justify-center items-center gap-4 mb-16'>
+      <h2 className='text-xl md:text-2xl lg:text-3xl font-bold text-white mb-5'>Trusted by <span className='text-[#0340aa]'>professionals at</span> top companies</h2>
+      <div className='flex flex-row overflow-x-auto gap-8 mb-16 scrollbar-hide'>
         <Image
           src="https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/google.png?updatedAt=1767107537686"
           alt="Google"
           width={120}
           height={60}
-          className="h-30 w-auto  object-contain opacity-50 hover:opacity-100 transition-opacity"
+          className="h-16 w-auto flex-shrink-0 object-contain opacity-50 hover:opacity-100 transition-opacity"
         />
         <Image
           src="https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/infosys.png?updatedAt=1767107537459"
           alt="Infosys"
           width={120}
           height={60}
-          className="h-30 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"
+          className="h-16 w-auto flex-shrink-0 object-contain opacity-50 hover:opacity-100 transition-opacity"
         />
         <Image
           src="https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/apple.png?updatedAt=1767107537517"
           alt="Apple"
           width={120}
           height={60}
-          className="h-30 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"
+          className="h-16 w-auto flex-shrink-0 object-contain opacity-50 hover:opacity-100 transition-opacity"
         />
         <Image
           src="https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/uber.png?updatedAt=1767107537497"
           alt="Uber"
           width={120}
           height={60}
-          className="h-30 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"
+          className="h-16 w-auto flex-shrink-0 object-contain opacity-50 hover:opacity-100 transition-opacity"
         />
         <Image
           src="https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/meta.png?updatedAt=1767107537454"
           alt="Meta"
           width={120}
           height={60}
-          className="h-30 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"
+          className="h-16 w-auto flex-shrink-0 object-contain opacity-50 hover:opacity-100 transition-opacity"
         />
         <Image
           src="https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/tcs.png?updatedAt=1767107537593"
           alt="TCS"
           width={120}
           height={60}
-          className="h-30 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity"
+          className="h-16 w-auto flex-shrink-0 object-contain opacity-50 hover:opacity-100 transition-opacity"
         />
       </div>
     </div>
     
     <div className='flex flex-row justify-between mb-10 py-10'>
       <div className='flex-1 mr-8'>
-  <div className='flex flex-row justify-between mb-10 py-10 px-10 '>
-    <h1 className='text-3xl md:text-4xl font-bold text-white mb-4 leading-tight'>
+  <div className='flex flex-row justify-between mb-5 py-10 px-10 '>
+    <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight'>
       <span className='text-[#0340aa]'>See In</span>
       <br/>
       Action
     </h1>
-    <p className='text-gray-400 text-lg leading-relaxed w-80'>
+    <p className='text-sm md:text-base lg:text-lg text-gray-400 leading-relaxed max-w-xs md:max-w-md lg:w-80'>
       A single platform that combines structured learning, real practice, and expert 
     </p>
   </div>        
-        <div className='relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-900 to-black border border-neutral-500/20 max-w-2xl mx-auto flex justify-center'>
+        <div className='relative rounded-2xl overflow-hidden shadow-2xl  border border-neutral-500/20 max-w-2xl mx-auto flex justify-center'>
           <iframe
             width="70%"
             height="300"
@@ -668,7 +665,7 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            className="w-[70%] h-[300px]"
+            className="w-[90%] h-[400px]"
           ></iframe>
         </div>
       </div>
@@ -684,15 +681,15 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
 
   <div className="w-full py-20 px-10">
     <div className="text-center mb-12">
-      <h1 className='font-bold text-4xl text-white'>Pricing of your future</h1>
-      <p className='text-neutral-500 text-2xl'>Select the best pricing plan that suits your needs</p>
+      <h1 className='font-bold text-2xl md:text-3xl lg:text-4xl text-white'>Pricing of your future</h1>
+      <p className='text-neutral-500 text-sm md:text-lg lg:text-2xl'>Select the best pricing plan that suits your needs</p>
     </div>
 
-    <div className="max-w-6xl mx-auto flex flex-row justify-center items-stretch gap-6">
-      <div className='border border-neutral-500/30 rounded-xl p-6 bg-black hover:shadow-lg transition-all duration-300 flex-1 max-w-sm'>
-        <h1 className='text-white font-semibold text-xl mb-2'>Basic Plan</h1>
-        <p className='text-neutral-500 mb-4'>Perfect for interview preparation beginners.</p>
-        <h1 className='text-white text-4xl font-bold mb-5'>$2 </h1>
+    <div className="max-w-6xl mx-auto flex flex-row overflow-x-auto gap-4 scrollbar-hide px-4">
+      <div className='border border-neutral-500/30 rounded-xl p-6 bg-black hover:shadow-lg transition-all duration-300 flex-shrink-0 w-[280px] md:flex-1 md:max-w-sm'>
+        <h1 className='text-white font-semibold text-lg md:text-xl mb-2'>Basic Plan</h1>
+        <p className='text-neutral-500 text-sm md:text-base mb-4'>Perfect for interview preparation beginners.</p>
+        <h1 className='text-white text-3xl md:text-4xl font-bold mb-5'>$2 </h1>
         <hr className='mb-4'/>
         
         <div className='space-y-3 mb-6'>
@@ -719,12 +716,12 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
         </button>
       </div>
 
-      <div className='border-2 border-[#0340aa]  rounded-xl p-6 bg-black hover:shadow-lg transition-all duration-300 flex-1 max-w-sm relative'>
+      <div className='border-2 border-[#0340aa] rounded-xl p-6 bg-black hover:shadow-lg transition-all duration-300 flex-shrink-0 w-[280px] md:flex-1 md:max-w-sm relative'>
         <div className='absolute top-3 left-1/2 transform -translate-x-1/2'>
         </div>
-        <h1 className='text-white text-xl  text-center  font-semibold bg-[#0340aa] px-3 py-1 rounded-2xl mb-2'>Pro Plan</h1>
-        <p className='text-neutral-500 mb-4'>Advanced features with mentorship support.</p>
-        <h1 className='text-white text-5xl font-bold mb-5'>$8</h1>
+        <h1 className='text-white text-lg md:text-xl text-center font-semibold bg-[#0340aa] px-3 py-1 rounded-2xl mb-2'>Pro Plan</h1>
+        <p className='text-neutral-500 text-sm md:text-base mb-4'>Advanced features with mentorship support.</p>
+        <h1 className='text-white text-3xl md:text-5xl font-bold mb-5'>$8</h1>
         <hr className='mb-4'/>
         
         <div className='space-y-3 mb-6'>
@@ -763,10 +760,10 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
         </button>
       </div>
 
-      <div className='border border-neutral-500/30 rounded-xl p-6 bg-black hover:shadow-lg transition-all duration-300 flex-1 max-w-sm'>
-        <h1 className='text-white text-xl font-bold mb-2'>Premium Plan</h1>
-        <p className='text-neutral-500 mb-4'>Complete solution with unlimited access.</p>
-        <h1 className='text-white text-4xl font-bold mb-5'>$6 </h1>
+      <div className='border border-neutral-500/30 rounded-xl p-6 bg-black hover:shadow-lg transition-all duration-300 flex-shrink-0 w-[280px] md:flex-1 md:max-w-sm'>
+        <h1 className='text-white text-lg md:text-xl font-bold mb-2'>Premium Plan</h1>
+        <p className='text-neutral-500 text-sm md:text-base mb-4'>Complete solution with unlimited access.</p>
+        <h1 className='text-white text-3xl md:text-4xl font-bold mb-5'>$6 </h1>
         <hr className='mb-4'/>
         
         <div className='space-y-3 mb-6'>
@@ -805,41 +802,49 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
     relative 
   " id='progress'
 >
-    <div className='max-w-7xl mx-auto px-10'>
+    <div className='lg:max-w-7xl mx-auto px-10'>
       <div className='mb-12 text-center'>
-        <h1 className='text-3xl font-bold text-white'>Coders that <span className='text-[#0340aa]'>turned around their careers</span></h1>
+        <h1 className='text-xl md:text-2xl lg:text-3xl font-bold text-white'>Coders that <span className='text-[#0340aa]'>turned around their careers</span></h1>
       </div>
 
-      <div className='flex flex-row overflow-x-auto gap-2'>
+      <div className='flex flex-row overflow-x-auto gap-2 md:gap-4 scrollbar-hide'>
         {[
           {
             name: "Shivam Kumar",
             position: "@Google SDE-3",
-            feedback: "PlusDSA helped me crack Google's interview. The structured approach and mock tests were game-changers!",
+            company: "Google",
+            companyLogo: "https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/google.png?updatedAt=1767107537686",
+            feedback: "PlusDSA's structured learning path and spaced repetition system helped me master complex algorithms. The mock interviews simulated real Google rounds perfectly. Within 4 months, I went from struggling with medium problems to solving hard ones confidently. The community support and progress tracking kept me motivated throughout my journey!",
             image: "https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/candidate.jpg?updatedAt=1767107537991"
           },
           {
             name: "Priya Sharma",
             position: "@Microsoft SDE-2",
-            feedback: "Amazing platform! The system design problems and expert mentorship made all the difference.",
+            company: "Microsoft",
+            companyLogo: "https://ik.imagekit.io/qwzhnpeqg/PlusDSA/microsoft-logo.png",
+            feedback: "The system design section and expert mentorship were game-changers for my Microsoft interview. PlusDSA's AI-powered recommendations identified my weak areas in dynamic programming and graph algorithms. The daily practice questions using spaced repetition helped me retain concepts better than any other platform I tried.",
             image: "https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/candidate.jpg?updatedAt=1767107537991"
           },
           {
             name: "Rahul Gupta",
             position: "@Amazon SDE-1",
-            feedback: "Best DSA practice platform I've used. Got placed at Amazon with 40% salary hike.",
+            company: "Amazon",
+            companyLogo: "https://ik.imagekit.io/qwzhnpeqg/PlusDSA/amazon-logo.png",
+            feedback: "Best DSA practice platform I've used! The contest environment prepared me for high-pressure situations. I solved over 500 problems using their curated sheets and got placed at Amazon with a 40% salary hike. The learning partner feature helped me stay consistent and motivated during tough times.",
             image: "https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/candidate.jpg?updatedAt=1767107537991"
           },
           {
             name: "Anita Singh",
             position: "@Uber Senior SDE",
-            feedback: "The progress tracking helped me stay focused. Cracked Uber in 3 months!",
+            company: "Uber",
+            companyLogo: "https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/uber.png?updatedAt=1767107537497",
+            feedback: "The progress tracking and analytics helped me stay focused on my weak areas. PlusDSA's intelligent algorithm recommended exactly the right problems at the right time. The community discussions and doubt-solving sessions were incredibly helpful. Cracked Uber's senior role in just 3 months of dedicated practice!",
             image: "https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/candidate.jpg?updatedAt=1767107537991"
           },
         ].map((testimonial, index) => (
-          <div key={index} className='border w-10% border-neutral-500/20 rounded-lg p-4    '>
-            <div className='flex  justify-between mb-3'>
-              <div className='flex   gap-2'>
+          <div key={index} className='border min-w-[280px] md:min-w-[320px] border-neutral-500/20 rounded-lg p-4'>
+            <div className='flex justify-between mb-3'>
+              <div className='flex gap-2'>
                 <Image 
                   src={testimonial.image}
                   width={32}
@@ -855,7 +860,18 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
               <FaLinkedin className='text-lg text-blue-500'/>
             </div>
             
-            <p className='text-gray-300 text-xs leading-relaxed'>{testimonial.feedback}</p>
+            <p className='text-gray-300 text-xs leading-relaxed mb-3'>{testimonial.feedback}</p>
+            
+            <div className='flex justify-between items-center pt-2 border-t border-neutral-600/30'>
+              <Image 
+                src={testimonial.companyLogo}
+                width={20}
+                height={20}
+                alt={testimonial.company}
+                className='object-contain opacity-70'
+              />
+              <span className='text-gray-400 text-xs font-medium'>{testimonial.position}</span>
+            </div>
           </div>
         ))}
 
@@ -867,36 +883,44 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
 
 
 
-       <div className='flex flex-row overflow-x-auto gap-2 mt-2'>
+       <div className='flex flex-row overflow-x-auto gap-2 md:gap-4 mt-2 scrollbar-hide'>
         {[
           {
-            name: "Shivam Kumar",
-            position: "@Google SDE-3",
-            feedback: "PlusDSA helped me crack Google's interview. The structured approach and mock tests were game-changers!",
+            name: "Arjun Patel",
+            position: "@Meta SDE-2",
+            company: "Meta",
+            companyLogo: "https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/meta.png?updatedAt=1767107537454",
+            feedback: "The contest feature and real-time competitions gave me the confidence to handle pressure interviews. PlusDSA's comprehensive approach covering algorithms, system design, and behavioral questions helped me land my dream job at Meta. The mentorship sessions were invaluable for interview strategy and technical guidance.",
             image: "https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/candidate.jpg?updatedAt=1767107537991"
           },
           {
-            name: "Priya Sharma",
-            position: "@Microsoft SDE-2",
-            feedback: "Amazing platform! The system design problems and expert mentorship made all the difference.",
+            name: "Sneha Reddy",
+            position: "@Netflix Senior SDE",
+            company: "Netflix",
+            companyLogo: "https://ik.imagekit.io/qwzhnpeqg/PlusDSA/netflix-logo.png",
+            feedback: "PlusDSA's AI-driven learning path adapted to my pace and identified exactly where I needed improvement. The spaced repetition system ensured I never forgot important concepts. The community feature connected me with amazing study partners who kept me accountable throughout my 6-month preparation journey.",
             image: "https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/candidate.jpg?updatedAt=1767107537991"
           },
           {
-            name: "Rahul Gupta",
-            position: "@Amazon SDE-1",
-            feedback: "Best DSA practice platform I've used. Got placed at Amazon with 40% salary hike.",
+            name: "Vikram Singh",
+            position: "@Apple SDE-3",
+            company: "Apple",
+            companyLogo: "https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/apple.png?updatedAt=1767107537517",
+            feedback: "From struggling with basic recursion to solving complex tree problems, PlusDSA transformed my coding skills completely. The detailed analytics showed my progress week by week. The mock interviews with real-time feedback prepared me perfectly for Apple's rigorous interview process. Highly recommend to serious job seekers!",
             image: "https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/candidate.jpg?updatedAt=1767107537991"
           },
           {
-            name: "Anita Singh",
-            position: "@Uber Senior SDE",
-            feedback: "The progress tracking helped me stay focused. Cracked Uber in 3 months!",
+            name: "Kavya Nair",
+            position: "@Tesla Senior SDE",
+            company: "Tesla",
+            companyLogo: "https://ik.imagekit.io/qwzhnpeqg/PlusDSA/tesla-logo.png",
+            feedback: "The combination of structured learning sheets, live contests, and expert mentorship is unmatched. PlusDSA's progress tracking helped me stay consistent even during challenging times. The platform's focus on both technical skills and interview preparation gave me the edge I needed to crack Tesla's competitive selection process.",
             image: "https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/candidate.jpg?updatedAt=1767107537991"
           },
         ].map((testimonial, index) => (
-          <div key={index} className='border w-10% border-neutral-500/20 rounded-lg p-4    '>
-            <div className='flex  justify-between mb-3'>
-              <div className='flex   gap-2'>
+          <div key={index} className='border min-w-[280px] md:min-w-[320px] border-neutral-500/20 rounded-lg p-4'>
+            <div className='flex justify-between mb-3'>
+              <div className='flex gap-2'>
                 <Image 
                   src={testimonial.image}
                   width={32}
@@ -912,7 +936,18 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
               <FaLinkedin className='text-lg text-blue-500'/>
             </div>
             
-            <p className='text-gray-300 text-xs leading-relaxed'>{testimonial.feedback}</p>
+            <p className='text-gray-300 text-xs leading-relaxed mb-3'>{testimonial.feedback}</p>
+            
+            <div className='flex justify-between items-center pt-2 border-t border-neutral-600/30'>
+              <Image 
+                src={testimonial.companyLogo}
+                width={20}
+                height={20}
+                alt={testimonial.company}
+                className='object-contain opacity-70'
+              />
+              <span className='text-gray-400 text-xs font-medium'>{testimonial.position}</span>
+            </div>
           </div>
         ))}
 
@@ -926,12 +961,12 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
   </div>
 
 <div className="py-20 mt-20 bg-black" id='faq'>
-  <div className="max-w-7xl mx-auto px-10">
+  <div className="lg:max-w-7xl mx-auto px-10">
     <div className="text-center mb-12">
-      <h1 className='text-3xl font-bold text-white mb-4'>
+      <h1 className='text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4'>
         Frequently Asked <span className='text-[#0340aa]'>Questions</span>
       </h1>
-      <p className='text-gray-400 text-lg'>
+      <p className='text-sm md:text-base lg:text-lg text-gray-400'>
         Get answers to common questions about PlusDSA
       </p>
     </div>
@@ -946,7 +981,7 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
             className="flex items-center justify-between w-full p-6 text-left"
             onClick={() => setOpenFAQ(openFAQ === index ? -1 : index)}
           >
-            <span className="text-white  font-semibold text-lg">
+            <span className="text-white font-semibold text-sm md:text-base lg:text-lg">
               {faq.question}
             </span>
             <div className={`transform transition-transform duration-300 ${
@@ -976,9 +1011,9 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
   </div>
 </div>
 
-<footer className="border-t mt-4 mb-3 border-gray-700">
-  <div className="max-w-7xl mx-auto px-4 py-8">
-    <div className="flex justify-between items-start">
+<footer className="border-t mt-4 mb-3 border-neutral-500/20">
+  <div className="lg:max-w-7xl mx-auto px-4 py-8">
+    <div className="flex flex-col md:flex-row justify-between items-start gap-8">
       <div>
         <Image
           src="https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Screenshot%202026-01-02%20202958.png"
@@ -992,18 +1027,16 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
         </p>
       </div>
 
-      <div className="flex justify-between gap-4">
+      <div className="flex flex-col md:flex-row justify-between gap-8">
         <div className='flex flex-col gap-1'>
-            <h1 className='font-bold  text-xl mb-3 text-[#0340aa]'>Our Products</h1>
-            <h1 className='font-bold hover:text-[#0340aa] curser-pointer'>Mockround.AI</h1>
-                        <h1 className='font-bold hover:text-[#0340aa] curser-pointer'>PlusDSA</h1>
-                        <h1 className='font-bold hover:text-[#0340aa] curser-pointer'>ClassRoom Mitra</h1>
-
-        
+            <h1 className='font-bold text-lg md:text-xl mb-3 text-[#0340aa]'>Our Products</h1>
+            <h1 className='font-bold text-sm md:text-base hover:text-[#0340aa] curser-pointer'>Mockround.AI</h1>
+            <h1 className='font-bold text-sm md:text-base hover:text-[#0340aa] curser-pointer'>PlusDSA</h1>
+            <h1 className='font-bold text-sm md:text-base hover:text-[#0340aa] curser-pointer'>ClassRoom Mitra</h1>
         </div>
 
         <div>
-            <h1 className='font-bold mb-5 text-[#0340aa]'>Social Links</h1>
+            <h1 className='font-bold text-lg md:text-xl mb-5 text-[#0340aa]'>Social Links</h1>
           <div className="flex items-center gap-1">
             {[
               { href: "https://x.com/Vsion09", icon: RiTwitterXLine },
@@ -1026,8 +1059,7 @@ style={{fontSize: '49px' , marginBottom:'60px' , marginTop:'20px' }}
         </div>
       </div>
     </div>
-
-    <div className="  border-t border-gray-700 text-center">
+      <div className=" py-4 border-t border-neutral-500/20 text-center">
       <p className="text-gray-400 text-sm">
         © 2026 PlusDSA. All rights reserved.
       </p>

@@ -204,14 +204,14 @@ function page() {
   return (
     <div className="h-screen max-w-screen bg-black overflow-hidden">
       <div className="flex flex-row h-full">
-        <div className="sticky top-0 h-screen">
+        <div className="sticky top-0 h-screen  lg:block z-50">
           <Sidebar />
         </div>
         <div className="flex flex-col flex-1 h-full">
-          <div className="sticky top-0 z-10 w-full flex flex-row justify-between h-18 border border-b flex gap-2 pt-5 pb-6 items-center text-xl border-neutral-500/20 bg-black">
+          <div className="sticky top-0 z-10 w-full flex flex-row justify-between border border-b gap-2 p-3 lg:pt-5 lg:pb-6 items-center text-base lg:text-xl border-neutral-500/20 bg-black">
             <div className="flex gap-2 items-center">
-              <span className="text-neutral-500 ml-5">Profile</span>
-              <MdArrowForwardIos className="text-neutral-500" />
+              <span className="text-neutral-500 lg:ml-5">Profile</span>
+              <MdArrowForwardIos className="text-neutral-500 text-sm lg:text-base" />
               <span>User Profile</span>
             </div>
            
@@ -219,25 +219,25 @@ function page() {
           </div>
 
           <div
-            className="flex-1 p-4 overflow-y-auto"
+            className="flex-1 p-2 sm:p-4 overflow-y-auto"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             <div className="max-w-4xl mx-auto">
-              <div className="relative w-full h-48 mb-6">
+              <div className="relative w-full h-32 sm:h-48 mb-6">
                 <Image
                   src="https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Screenshot%202026-01-02%20202958.png?updatedAt=1767366130662"
                   fill
                   alt="Profile Banner"
                   className="rounded-xl border border-neutral-500/20 object-cover"
                 />
-                <div className="absolute -bottom-16 left-8">
+                <div className="absolute -bottom-12 sm:-bottom-16 left-4 sm:left-8">
                   <label className="cursor-pointer relative group">
                     <Image
                       src={profileData.avatar || "https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/candidate.jpg?updatedAt=1767107537991"}
-                      width={120}
-                      height={120}
+                      width={80}
+                      height={80}
                       alt="Profile Picture"
-                      className="rounded-full border-4 border-black object-cover"
+                      className="rounded-full border-4 border-black object-cover sm:w-[120px] sm:h-[120px]"
                     />
                     {editprofile && (
                       <div className="absolute inset-0 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -257,17 +257,17 @@ function page() {
                 </div>
               </div>
 
-              <div className="mt-17 space-y-2">
-                <div className="flex justify-between items-start">
-                  <div>
+              <div className="mt-14 sm:mt-17 space-y-2">
+                <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
+                  <div className="flex-1">
                     {editprofile ? (
                       <input 
                         value={profileData.name}
                         onChange={(e: any) => handleInputChange('name', e.target.value)}
-                        className="text-white text-3xl font-bold bg-transparent border-b border-neutral-500 focus:border-blue-500 outline-none w-full"
+                        className="text-white text-xl sm:text-3xl font-bold bg-transparent border-b border-neutral-500 focus:border-blue-500 outline-none w-full"
                       />
                     ) : (
-                      <h1 className="text-white text-3xl font-bold">
+                      <h1 className="text-white text-xl sm:text-3xl font-bold">
                         {profileData.name}
                       </h1>
                     )}
@@ -298,7 +298,7 @@ function page() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-wrap">
                     {editprofile ? (
                       <div className="flex flex-col gap-2">
                         <input 
@@ -370,8 +370,8 @@ function page() {
                 </div>
               </div>
 
-              <div className="flex flex-row gap-2 m-auto mt-10">
-                <div className=" border border-neutral-500/20 p-5 w-1/2 flex flex-col  rounded-xl">
+              <div className="flex flex-col lg:flex-row gap-4 lg:gap-2 m-auto mt-10">
+                <div className="border border-neutral-500/20 p-3 sm:p-5 w-full lg:w-1/2 flex flex-col rounded-xl">
                   <div>
                     <div className="flex flex-row justify-between items-center mb-4 text-xl">
                       <h1>About</h1>
@@ -554,7 +554,7 @@ function page() {
 
                 </div>
 
-                <div className="border border-neutral-500/20 p-5 w-1/2 rounded-xl h-fit">
+                <div className="border border-neutral-500/20 p-3 sm:p-5 w-full lg:w-1/2 rounded-xl h-fit">
                   <div className="bg-neutral-800/50 p-4 rounded-xl border border-neutral-500/20">
                     <h2 className="text-white text-xl font-semibold mb-4 text-center flex items-center justify-center gap-2">
                       <IoSettingsOutline className="text-blue-500" />

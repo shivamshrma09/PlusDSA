@@ -6,6 +6,7 @@ import { Button } from "@heroui/react";
 import { sendSignupOTP, verifySignupOTP, handleGoogleLogin } from './services/authService';
 import { useRouter } from 'next/navigation';
 import Socialbutton from '../components/Socialbutton';
+import { authUtils } from '@/lib/auth';
 
 function SignupPage() {
   const [formData, setFormData] = useState({
@@ -40,8 +41,13 @@ function SignupPage() {
       } else if (step === 'otp') {
         const result = await verifySignupOTP(formData.email, formData.otp, formData.name);
         if (result.success) {
-          toast.success('Registration successful!');
-        router.push('/home/striver-a2z-dsa-course');
+          if (result.token) {
+            authUtils.setToken(result.token);
+            toast.success('Registration successful!');
+            setTimeout(() => {
+              window.location.href = '/home/striver-a2z-dsa-course';
+            }, 100);
+          }
         } else {
           toast.error(result.message || 'Invalid OTP');
         }
@@ -138,7 +144,7 @@ function SignupPage() {
           <div className="text-center mt-6">
             <p className="text-gray-400 text-sm">
               Already have an account?{" "}
-              <a href="/login" className="text-[#0340aa] hover:underline font-medium">
+              <a href="/auth/login" className="text-[#0340aa] hover:underline font-medium">
                 Sign in here
               </a>
             </p>

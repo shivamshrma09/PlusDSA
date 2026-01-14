@@ -46,8 +46,7 @@ function page() {
     return (
       <div className='h-screen max-w-screen bg-black overflow-hidden flex items-center justify-center'>
         <div className='text-white text-center'>
-          <div className='animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4'></div>
-          <p className='text-gray-400'>Loading...</p>
+          <p className='text-gray-400 text-xl'>Loading...</p>
         </div>
       </div>
     );

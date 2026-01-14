@@ -24,7 +24,7 @@ interface IUserModel extends Model<IUser> {
 }
 
 const playlist = new Schema({
-    playlistId: { type: String, required: true, unique: true },
+    playlistId: { type: String, required: true },
     playlistName: { type: String, required: true, trim: true },
     description: { type: String, trim: true },
     questions: [{

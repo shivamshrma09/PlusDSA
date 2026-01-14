@@ -119,29 +119,29 @@ function page() {
 
 
   return (
-    <div className='min-h-screen bg-black'>
-      <div className='flex'>
-        <div className='fixed left-0 top-0 h-screen z-40 w-72'>
+    <div className='min-h-screen w-full bg-black overflow-x-hidden'>
+      <div className='flex flex-col lg:flex-row w-full'>
+        <div className=' lg:block lg:sticky lg:top-0 lg:h-screen'>
           <Sidebar/>
         </div>
 
-        <div className='flex-1 ml-72'> 
-          <header className='fixed top-0 left-72 right-0 z-30 bg-black border-b border-neutral-500/30 px-6 py-4'>
-            <div className='flex flex-row justify-between items-center'>
+        <div className='flex-1 w-full lg:ml-0'> 
+          <header className='sticky top-0 z-30 bg-black border-b border-neutral-500/30 px-4 lg:px-6 py-4'>
+            <div className='flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 lg:gap-0'>
               <div className='flex items-center gap-2'>
                 <p className='text-neutral-500'>Dashboard</p> 
                 <MdArrowForwardIos className='text-sm'/> 
                 <p className='text-white'>Progress Tracker</p>
               </div>
 
-              <div className='flex flex-row items-center gap-2 px-4 py-2 border border-neutral-500/30 rounded-2xl bg-[#0340aa] hover:bg-[#0340aa]/80 transition-colors cursor-pointer'>
+              <div className='flex flex-row items-center gap-2 px-4 py-2 border border-neutral-500/30 rounded-2xl bg-[#0340aa] hover:bg-[#0340aa]/80 transition-colors cursor-pointer w-full lg:w-auto justify-center'>
                 <button className='text-md font-semibold text-white' onClick={()=> toast.success("Solve more question to see data ")}>Visualise Your Progress</button>
                 <IoStatsChartOutline className='text-white text-md'/>
               </div>
             </div>
           </header>
 
-          <div className='pt-20 p-6 relative h-screen'>
+          <div className='p-4 lg:p-6 relative min-h-screen'>
             {(showsheetwt || showsheetsr) ? (
               <>
                 {showsheetwt && (

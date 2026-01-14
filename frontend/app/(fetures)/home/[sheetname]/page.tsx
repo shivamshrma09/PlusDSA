@@ -983,13 +983,13 @@ if (leaderboardResponse?.success) {
   };
 
   return (
-    <div className="min-h-screen max-w-screen bg-black overflow-x-hidden">
+    <div className="min-h-screen max-w-screen bg-black ">
       <div className="flex flex-row">
-        <div className="sticky top-0 h-screen">
+        <div className=" lg:block sticky top-0 h-screen">
           <Sidebar />
         </div>
 
-        <div className="flex flex-col min-h-screen bg-black overflow-x-hidden">
+        <div className="flex flex-col min-h-screen bg-black ">
           <header className="lg:h-18  sticky top-0   border-b bg-black flex-row justify-between border-neutral-500/30 flex items-center pl-6">
             <div className="flex flex-row gap-2 items-center">
               <p className="text-neutral-500">Sheets</p>
@@ -1049,8 +1049,8 @@ if (leaderboardResponse?.success) {
             </div>
           )}
 
-          <div className="flex flex-row max-w-screen-xl mx-auto ">
-            <div className="flex-1 p-7 lg:m-2 w-3/4 bg-black border border-1 border-neutral-500/20 rounded-lg flex flex-col gap-4 overflow-hidden">
+          <div className="flex flex-col lg:flex-row w-full lg:max-w-screen-xl lg:mx-auto">
+            <div className="flex-1 p-2 lg:p-7 lg:m-2 w-full lg:w-3/4 bg-black border border-1 border-neutral-500/20 rounded-lg flex flex-col gap-4">
               <h1 className="text-white text-3xl">
             Striver A2Z DSA Course{" "}
               </h1>
@@ -1230,7 +1230,8 @@ if (leaderboardResponse?.success) {
 
                               {openSections[sectionKey] && (
                                 <div className="border-t border-neutral-500/30 p-3">
-                                  <div className="grid grid-cols-13 gap-2 text-neutral-400 text-sm font-medium mb-3 px-2">
+                                  <div className="w-full overflow-x-auto">
+                                  <div className="grid grid-cols-13 gap-2 text-neutral-400 text-sm font-medium mb-3 px-2 min-w-[800px]">
                                     <div className="col-span-1 text-center">
                                       Status
                                     </div>
@@ -1269,7 +1270,7 @@ if (leaderboardResponse?.success) {
                                   {section.problems?.map((problem: any, index: any) => (
                                     <div
                                       key={problem.id}
-                                      className="grid grid-cols-13 gap-2 items-center py-2 px-2 border-b border-neutral-500/20 last:border-b-0"
+                                      className="grid grid-cols-13 gap-2 items-center py-2 px-2 border-b border-neutral-500/20 last:border-b-0 min-w-[800px]"
                                     >
                                       <div className="col-span-1 flex justify-center">
                                         {result?.data?.sheet?.solvedquestions?.find(
@@ -1434,6 +1435,7 @@ if (leaderboardResponse?.success) {
                                       </div>
                                     </div>
                                   ))}
+                                  </div>
                                 </div>
                               )}
                             </div>
@@ -1446,8 +1448,8 @@ if (leaderboardResponse?.success) {
               </div>
             </div>
 
-            <div className="flex flex-col lg:w-1/4 mr-2 sticky top-20 h-fit">
-              <div className=" p-3  font-semibold lg:h-80 bg-black border border-1 border-neutral-500/20 rounded-lg ">
+            <div className="flex flex-col w-full lg:w-1/4 lg:mr-2 lg:sticky lg:top-20 lg:self-start mt-4 lg:mt-0 pb-32 lg:pb-0">
+              <div className="p-3 font-semibold bg-black border border-1 border-neutral-500/20 rounded-lg mb-4">
                 <div className="flex flex-col text-lg">
                   <div className='flex items-center gap-2 mb-3'>
                       <FaFire className='text-xl  text-[#0340aa] font-bold text-'/>   
@@ -1471,7 +1473,7 @@ if (leaderboardResponse?.success) {
                     <p>SU</p>
                   </div>
 
-                  <div className="grid grid-cols-7 gap-1 mt-3">
+                  <div className="grid grid-cols-7 gap-1 mt-3 mb-4">
                     {Array.from({ length: 1 }, (_: any, i: any) => (
                       <div key={`empty-${i}`} className="h-8"></div>
                     ))}
@@ -1522,10 +1524,7 @@ if (leaderboardResponse?.success) {
                 </div>
               </div>
 
-              <div
-                className="p-3 mt-2 mr-1 font-semibold bg-black border border-1 border-neutral-500/20 rounded-lg overflow-y-auto max-h-96"
-                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-              >
+              <div className="p-3 font-semibold bg-black border border-1 border-neutral-500/20 rounded-lg mb-4">
                 <div className="flex flex-row justify-between items-center mb-4">
                   <div className="flex items-center gap-2 text-white text-lg">
                     <GiPodiumWinner className='text-[#0340aa] font-bold text-xl'/>
@@ -1600,7 +1599,19 @@ if (leaderboardResponse?.success) {
               </div>
 
               <div
-                className="p-3 m-2 font-semibold bg-black border border-1 border-neutral-500/20 rounded-lg "
+                className="p-3 font-semibold bg-black border border-1 border-neutral-500/20 rounded-lg mb-4 lg:hidden"
+              >
+                <Image
+                  src="https://ik.imagekit.io/qwzhnpeqg/mockround.ai%20imges%20public/promotion.png?updatedAt=1767107547225"
+                  width={300}
+                  height={200}
+                  alt="promotion"
+                  className="rounded-lg"
+                />
+              </div>
+
+              <div
+                className="p-3 m-2 font-semibold bg-black border border-1 border-neutral-500/20 rounded-lg hidden lg:block"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 <Image
