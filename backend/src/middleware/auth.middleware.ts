@@ -14,19 +14,21 @@ export const authMiddleware = async (req: AuthRequest, res: Response, next: Next
     }
     
     if (!token) {
-      return res.status(401).json({ success: false, message: 'Access denied' });
+      console.log('No token found in headers or cookies');
+      return res.status(401).json({ success: false, message: 'Access denied. No token provided.' });
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET || 'fallback-secret') as any;
     const user = await UserModel.findById(decoded._id || decoded.userId);
     
     if (!user) {
-      return res.status(401).json({ success: false, message: 'Invalid token.' });
+      return res.status(401).json({ success: false, message: 'Invalid token. User not found.' });
     }
 
     req.user = user;
     next();
   } catch (error) {
-    return res.status(401).json({ success: false, message: 'Invalid token.' });
+    console.error('Auth middleware error:', error);
+    return res.status(401).json({ success: false, message: 'Invalid or expired token.' });
   }
 };
