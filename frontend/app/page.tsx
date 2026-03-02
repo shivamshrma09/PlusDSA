@@ -129,12 +129,12 @@ function page() {
         initial={{opacity:0 , scale:0.7}}
       animate={{opacity:1 , scale:0.9}}
       transition={{duration:3}}
-       className='flex lg:max-w-4xl  mx-auto rounded-full items-center justify-center py-1 px-2 shadow-lg' style={{background: 'linear-gradient(135deg, #0340aa, #4f46e5, #0b2a60)', boxShadow: '0 4px 15px rgba(3, 64, 170, 0.4)'}}>
+       className='flex lg:max-w-5xl mx-auto rounded-full items-center justify-center py-2 px-3 shadow-lg text-sm md:text-base' style={{background: 'linear-gradient(135deg, #0340aa, #4f46e5, #0b2a60)', boxShadow: '0 4px 15px rgba(3, 64, 170, 0.4)'}}>
         Get    <b className='p-1 border-white bg-black text-white rounded-full px-2 mx-1'>55% OFF</b>   on year end sale and crack interviews
 
       </motion.div>
       <motion.div 
-      className='lg:max-w-7xl mx-auto mt-2 px-2 md:px-5 py-2 border border-neutral-500/30 rounded-full flex justify-between items-center' style={{marginBottom: 90}}  
+      className='lg:max-w-7xl mx-auto mt-2 px-4 md:px-6 py-3 border border-neutral-500/30 rounded-full flex justify-between items-center' style={{marginBottom: 80}}  
       >
         <div className='flex-shrink-0'>
         <Image
@@ -146,27 +146,27 @@ function page() {
         /> 
         </div>
 
-        <div className='hidden md:flex gap-2'>
+        <div className='hidden md:flex gap-3'>
        <button 
-         className='text-white text-md hover:text-blue-400 cursor-pointer transition-colors' 
+         className='text-white text-base hover:text-blue-400 cursor-pointer transition-colors' 
          onClick={() => document.getElementById('problems')?.scrollIntoView({ behavior: 'smooth' })}
        >
          Problem
        </button>
        <button 
-         className='text-white text-md hover:text-blue-400 cursor-pointer transition-colors' 
+         className='text-white text-base hover:text-blue-400 cursor-pointer transition-colors' 
          onClick={() => document.getElementById('progress')?.scrollIntoView({ behavior: 'smooth' })}
        >
          Progress
        </button>
        <button 
-         className='text-white text-md hover:text-blue-400 cursor-pointer transition-colors' 
+         className='text-white text-base hover:text-blue-400 cursor-pointer transition-colors' 
          onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
        >
          Features
        </button>
        <button 
-         className='text-white text-md hover:text-blue-400 cursor-pointer transition-colors' 
+         className='text-white text-base hover:text-blue-400 cursor-pointer transition-colors' 
          onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
        >
          FAQ
@@ -176,14 +176,14 @@ function page() {
 
           <div className='flex gap-2 md:gap-3 flex-shrink-0'>
        <button 
-         className='text-xs md:text-md text-[#0340aa] cursor-pointer font-semibold'
+         className='text-sm md:text-base text-[#0340aa] cursor-pointer font-semibold'
          onClick={() => window.location.href = '/auth/login'}
        >
          Login
        </button>
        <motion.button 
          whileHover={{scale: 1.05}}
-         className='text-white text-xs md:text-md bg-[#0340aa] px-3 md:px-4 py-1.5 md:py-2 flex gap-1 md:gap-2 items-center border-[#042660] rounded-full cursor-pointer font-semibold'
+         className='text-white text-sm md:text-base bg-[#0340aa] px-4 md:px-5 py-2 md:py-2.5 flex gap-1 md:gap-2 items-center border-[#042660] rounded-full cursor-pointer font-semibold'
          onClick={() => window.location.href = '/auth/singup'}
        >
          Register 
@@ -191,7 +191,7 @@ function page() {
            animate={{x: [0, 5, 0]}}
            transition={{repeat: Infinity, duration: 1.5}}
          >
-           <IoMdArrowForward className='text-xs md:text-base'/>
+           <IoMdArrowForward className='text-sm md:text-base'/>
          </motion.div>
        </motion.button>
 
@@ -202,50 +202,67 @@ function page() {
       </motion.div>
 
 
-      <div
-      className='flex flex-col mx-auto gap-1  mt-10 '
-      >
-        <div className='text-center px-4  lg:max-w-7xl  mx-auto'>
-          <motion.h1 
-            className='text-2xl md:text-4xl lg:text-5xl font-bold text-white'
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{duration: 0.8}}
-            style={{marginBottom:'60px' , marginTop:'20px' }}
-          >
-            Master Data Structure And Algorithm (DSA) <span className='text-[#0340aa]'>10</span>x
-            <br />
-            using <motion.span
-              key={currentFeature}
-              initial={{opacity: 0, y: 20}}
-              animate={{opacity: 1, y: 0}}
-              exit={{opacity: 0, y: -20}}
-              transition={{duration: 0.5}}
-              className="text-[#0340aa]" 
+      {/* Hero Section with Text Left and Images Right */}
+      <div className='lg:max-w-7xl mx-auto px-4 mt-10'>
+        <div className='flex flex-col lg:flex-row items-center gap-8 lg:gap-12'>
+          {/* Left: Text Content */}
+          <div className='flex-1 text-center lg:text-left'>
+            <motion.h1 
+              className='text-2xl md:text-4xl lg:text-5xl font-bold text-white'
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              transition={{duration: 0.8}}
             >
-              {features[currentFeature]}
-            </motion.span>
-          </motion.h1>
-          
-          <div className='flex flex-row gap-4 justify-center '>
-            <Image
-              src="https://ik.imagekit.io/qwzhnpeqg/PlusDSA/upvote_embed%20(1).svg"
-              alt="Logo"
-              width={200}
-              height={50}
-              className="h-12 rounded-lg cursor-pointer"
-            /> 
+              Master Data Structure And Algorithm (DSA) <span className='text-[#0340aa]'>10</span>x
+              <br />
+              using <motion.span
+                key={currentFeature}
+                initial={{opacity: 0, y: 20}}
+                animate={{opacity: 1, y: 0}}
+                exit={{opacity: 0, y: -20}}
+                transition={{duration: 0.5}}
+                className="text-[#0340aa]" 
+              >
+                {features[currentFeature]}
+              </motion.span>
+            </motion.h1>
+          </div>
 
-            <Image
-              src="https://ik.imagekit.io/qwzhnpeqg/PlusDSA/featured.svg"
-              alt="Logo"
-              width={200}
-              height={50}
-              className="h-12 rounded-lg cursor-pointer"
-            /> 
+          {/* Right: Rotating Images */}
+          <div className='flex-1 w-full max-w-lg'>
+            <div className='relative rounded-2xl overflow-hidden shadow-2xl border border-neutral-500/20 aspect-video'>
+              {[
+                'https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Screenshot%202026-01-03%20191308.png?updatedAt=1768158443903',
+                'https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Screenshot%202026-01-12%20002423.png?updatedAt=1768157705301',
+                'https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Screenshot%202026-01-03%20191343.png?updatedAt=1768158431643',
+                'https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Screenshot%202026-01-12%20003238.png?updatedAt=1768158689865'
+              ].map((img, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0 }}
+                  animate={{ 
+                    opacity: [0, 1, 1, 0],
+                    scale: [0.95, 1, 1, 0.95]
+                  }}
+                  transition={{
+                    duration: 3,
+                    delay: idx * 3,
+                    repeat: Infinity,
+                    repeatDelay: 9
+                  }}
+                  className='absolute inset-0'
+                >
+                  <Image
+                    src={img}
+                    alt={`Feature ${idx + 1}`}
+                    fill
+                    className='object-cover'
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
-       
       </div>
 
 
@@ -656,17 +673,36 @@ function page() {
       A single platform that combines structured learning, real practice, and expert 
     </p>
   </div>        
-        <div className='relative rounded-2xl overflow-hidden shadow-2xl  border border-neutral-500/20 max-w-2xl mx-auto flex justify-center'>
-          <iframe
-            width="70%"
-            height="300"
-            src="https://www.youtube.com/embed/MYYeCneMpKE"
-            title="PlusDSA Platform Demo"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            className="w-[90%] h-[400px]"
-          ></iframe>
+        <div className='relative rounded-2xl overflow-hidden shadow-2xl border border-neutral-500/20 max-w-2xl mx-auto'>
+          <div className='relative w-full' style={{paddingBottom: '56.25%'}}>
+            <Image
+              src="https://ik.imagekit.io/qwzhnpeqg/PlusDSA/Gemini_Generated_Image_op0e8hop0e8hop0e.png"
+              alt="Video Thumbnail"
+              fill
+              className="object-cover cursor-pointer"
+              onClick={(e) => {
+                const parent = e.currentTarget.parentElement?.parentElement;
+                if (parent) {
+                  parent.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/MYYeCneMpKE?autoplay=1" title="PlusDSA Platform Demo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>`;
+                }
+              }}
+            />
+            <div 
+              className='absolute inset-0 flex items-center justify-center cursor-pointer'
+              onClick={(e) => {
+                const parent = e.currentTarget.parentElement?.parentElement;
+                if (parent) {
+                  parent.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/MYYeCneMpKE?autoplay=1" title="PlusDSA Platform Demo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>`;
+                }
+              }}
+            >
+              <div className='w-16 h-16 md:w-20 md:h-20 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors'>
+                <svg className='w-8 h-8 md:w-10 md:h-10 text-white ml-1' fill='currentColor' viewBox='0 0 24 24'>
+                  <path d='M8 5v14l11-7z'/>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       
@@ -679,122 +715,6 @@ function page() {
 </div>
 
 
-  <div className="w-full py-20 px-10">
-    <div className="text-center mb-12">
-      <h1 className='font-bold text-2xl md:text-3xl lg:text-4xl text-white'>Pricing of your future</h1>
-      <p className='text-neutral-500 text-sm md:text-lg lg:text-2xl'>Select the best pricing plan that suits your needs</p>
-    </div>
-
-    <div className="max-w-6xl mx-auto flex flex-row overflow-x-auto gap-4 scrollbar-hide px-4">
-      <div className='border border-neutral-500/30 rounded-xl p-6 bg-black hover:shadow-lg transition-all duration-300 flex-shrink-0 w-[280px] md:flex-1 md:max-w-sm'>
-        <h1 className='text-white font-semibold text-lg md:text-xl mb-2'>Basic Plan</h1>
-        <p className='text-neutral-500 text-sm md:text-base mb-4'>Perfect for interview preparation beginners.</p>
-        <h1 className='text-white text-3xl md:text-4xl font-bold mb-5'>$2 </h1>
-        <hr className='mb-4'/>
-        
-        <div className='space-y-3 mb-6'>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            5 AI mock interviews
-          </div>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            2 Mentorship sessions
-          </div>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            1 challenge access
-          </div>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            Access to all test templates
-          </div>
-        </div>
-        
-        <button className='px-5 py-3 w-full rounded-xl font-bold bg-[#0340aa] hover:bg-[#042660] flex items-center justify-center text-xl transition-colors'>
-          Get it now <RiArrowRightDoubleLine className='ml-4'/>
-        </button>
-      </div>
-
-      <div className='border-2 border-[#0340aa] rounded-xl p-6 bg-black hover:shadow-lg transition-all duration-300 flex-shrink-0 w-[280px] md:flex-1 md:max-w-sm relative'>
-        <div className='absolute top-3 left-1/2 transform -translate-x-1/2'>
-        </div>
-        <h1 className='text-white text-lg md:text-xl text-center font-semibold bg-[#0340aa] px-3 py-1 rounded-2xl mb-2'>Pro Plan</h1>
-        <p className='text-neutral-500 text-sm md:text-base mb-4'>Advanced features with mentorship support.</p>
-        <h1 className='text-white text-3xl md:text-5xl font-bold mb-5'>$8</h1>
-        <hr className='mb-4'/>
-        
-        <div className='space-y-3 mb-6'>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            Everything in Basic Plan
-          </div>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            10 AI mock interviews
-          </div>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            6 Mentorship sessions
-          </div>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            Resume review
-          </div>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            Access to community
-          </div>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            Offline mock interviews
-          </div>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            5 challenges access
-          </div>
-        </div>
-        
-        <button className='px-5 py-3 w-full rounded-xl font-bold bg-[#0340aa] hover:bg-[#042660] flex items-center justify-center text-xl transition-colors'>
-          Get it now <RiArrowRightDoubleLine className='ml-4'/>
-        </button>
-      </div>
-
-      <div className='border border-neutral-500/30 rounded-xl p-6 bg-black hover:shadow-lg transition-all duration-300 flex-shrink-0 w-[280px] md:flex-1 md:max-w-sm'>
-        <h1 className='text-white text-lg md:text-xl font-bold mb-2'>Premium Plan</h1>
-        <p className='text-neutral-500 text-sm md:text-base mb-4'>Complete solution with unlimited access.</p>
-        <h1 className='text-white text-3xl md:text-4xl font-bold mb-5'>$6 </h1>
-        <hr className='mb-4'/>
-        
-        <div className='space-y-3 mb-6'>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            Everything in Pro Plan
-          </div>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            Unlimited AI mock interviews
-          </div>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            10 Mentorship sessions
-          </div>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            Unlimited challenges access
-          </div>
-          <div className='flex items-center gap-2 text-neutral-500'>
-            <FaCheckCircle className='text-green-500'/>
-            Priority support
-          </div>
-        </div>
-        
-        <button className='px-5 py-3 w-full rounded-xl font-bold bg-[#0340aa] hover:bg-[#042660] flex items-center justify-center text-xl transition-colors'>
-          Get it now <RiArrowRightDoubleLine className='ml-4'/>
-        </button>
-      </div>
-    </div>
-  </div>
 
 
   <div className="
@@ -1030,9 +950,9 @@ function page() {
       <div className="flex flex-col md:flex-row justify-between gap-8">
         <div className='flex flex-col gap-1'>
             <h1 className='font-bold text-lg md:text-xl mb-3 text-[#0340aa]'>Our Products</h1>
-            <h1 className='font-bold text-sm md:text-base hover:text-[#0340aa] curser-pointer'>Mockround.AI</h1>
-            <h1 className='font-bold text-sm md:text-base hover:text-[#0340aa] curser-pointer'>PlusDSA</h1>
-            <h1 className='font-bold text-sm md:text-base hover:text-[#0340aa] curser-pointer'>ClassRoom Mitra</h1>
+            <a href='https://mockroundai-six.vercel.app/' target='_blank' rel='noopener noreferrer' className='font-bold text-sm md:text-base hover:text-[#0340aa] cursor-pointer text-white'>Mockround.AI</a>
+            <a href='https://plusdsaai.vercel.app' target='_blank' rel='noopener noreferrer' className='font-bold text-sm md:text-base hover:text-[#0340aa] cursor-pointer text-white'>PlusDSA</a>
+            <a href='https://classrommitra.vercel.app/' target='_blank' rel='noopener noreferrer' className='font-bold text-sm md:text-base hover:text-[#0340aa] cursor-pointer text-white'>ClassRoom Mitra</a>
         </div>
 
         <div>
