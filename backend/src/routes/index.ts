@@ -1,5 +1,6 @@
 import express from 'express';
 import authRoutes from './auth.routes';
+import googleAuthRoutes from './google.auth.router';
 import sheetRoutes from './sheet.routes';
 import playlistRoutes from './playlist.routes';
 import userActivityRoutes from './userActivity';
@@ -14,6 +15,7 @@ import weakAreasRoutes from './weakAreas.routes';
 
 const router = express.Router();
 
+router.use('/', googleAuthRoutes);
 router.use('/auth', authRoutes);
 router.use('/sheet', sheetRoutes);
 router.use('/playlist', playlistRoutes);

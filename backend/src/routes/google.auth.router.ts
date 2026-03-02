@@ -79,8 +79,8 @@ router.get('/auth/google/callback', async (req, res) => {
       maxAge: 7 * 24 * 60 * 60 * 1000
     });
     
-    console.log('Redirecting to frontend with token in cookie');
-    res.redirect(`${process.env.FRONTEND_URL}/home?user=${encodeURIComponent(JSON.stringify({
+    console.log('Redirecting to frontend with token');
+    res.redirect(`${process.env.FRONTEND_URL}/auth/login?token=${token}&user=${encodeURIComponent(JSON.stringify({
       _id: user._id,
       name: user.name,
       email: user.email,
